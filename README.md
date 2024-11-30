@@ -18,10 +18,12 @@ Status: Planning
 ./scripts/interface.py: Manages text interface, menus, and prompts.
 ```
 
+### Technology Stack and Dependencies
+- Programming Language: Python 3.10 or higher.
+- LLMs and Libraries: OpenAI's GPT-4 (if accessible) or open-source alternatives like Hugging Face Transformers.Music generation libraries such as Magenta by TensorFlow or MuseNet.
+- Audio Processing: Pydub for audio manipulation. Simpleaudio or Playsound for audio playback.
+- User Interface: Python's built-in curses library for advanced text-based UI (optional).
+- Shell Scripting: Bash for the launcher/installer script.
+
 ### Description
 Llm-Music-Gen is a command-line Python application designed to generate music based on user-defined styles using Large Language Models (LLMs). The program provides a user-friendly interface with options to configure music styles, generate music, and play the generated tracks automatically.
-
-
-
-Auto, Generate and Play, music on a loop; every so often, a new song will play...
-
