@@ -1,5 +1,5 @@
 # Llm-Music-Gen
-Status: Planning
+Status: Plan done, on hold (other projects).
 
 ### Project Goals
 - Modular Design: Create a maintainable and scalable codebase with clear separation of concerns.
