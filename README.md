@@ -27,3 +27,35 @@ Status: Planning
 
 ### Description
 Llm-Music-Gen is a command-line Python application designed to generate music based on user-defined styles using Large Language Models (LLMs). The program provides a user-friendly interface with options to configure music styles, generate music, and play the generated tracks automatically.
+
+### Preview
+```
+================================================================================
+    Llm-Music-Gen
+================================================================================
+
+    1. Begin Generating Music
+    2. Configure Options
+
+--------------------------------------------------------------------------------
+Selection; Menu Option = 1-2, Exit Program = X:
+```
+```
+================================================================================
+    Llm-Music-Gen
+================================================================================
+
+Llm-Music-Gen: What kind of music are we making today?
+User Input: Dubstep
+```
+```
+================================================================================
+    Llm-Music-Gen
+================================================================================
+
+Llm-Music-Gen: Making a Dubstep song, time so far: 00:02:15.
+
+[##########--------------------] 33% Complete
+
+--------------------------------------------------------------------------------
+```
