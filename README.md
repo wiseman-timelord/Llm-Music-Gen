@@ -62,3 +62,4 @@ Llm-Music-Gen: Making a Dubstep song, time so far: 00:02:15.
 
 ### Notation
 - Sound/Music based Llm's are new to me, so this is partly an experiment; assuming if its text to music, and relys on one prompt, its not going to be as complicated as most of my chatbots.
+- Model of interest - (marban/musicgen-large)[https://huggingface.co/facebook/musicgen-large].
