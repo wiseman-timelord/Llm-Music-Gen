@@ -1,5 +1,5 @@
 # Llm-Music-Gen
-Status: Plan done, on hold (other projects).
+Status: Alpha (not tested yet, still implementing)
 
 ### Project Goals
 - Modular Design: Create a maintainable and scalable codebase with clear separation of concerns.
