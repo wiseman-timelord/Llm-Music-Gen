@@ -34,34 +34,47 @@ Preview
 
 ### Preview
 ```
+
 ================================================================================
-    Llm-Music-Gen
+    Llm-Music-Gen: Main Menu
 ================================================================================
 
-    1. Begin Generating Music
+    1. Generate Music
+    2. Output Jukebox
     2. Configure Options
 
 --------------------------------------------------------------------------------
-Selection; Menu Option = 1-2, Exit Program = X:
+Selection; Menu Option = 1-3, Exit Program = X:
 ```
+
 ```
 ================================================================================
-    Llm-Music-Gen
+    Llm-Music-Gen: Generate Music
 ================================================================================
 
-Llm-Music-Gen: What kind of music are we making today?
-User Input: Dubstep
-```
-```
-================================================================================
-    Llm-Music-Gen
-================================================================================
-
-Llm-Music-Gen: Making a Dubstep song, time so far: 00:02:15.
-
+Llm-Music-Gen: What kind of music are we making today? (Styles, separated, by, commas)
+User Input: Chill, Dubstep
+Llm-Music-Gen: How many songs should I generate?
+User Input: 3
+Llm-Music-Gen: Producing "Chill, Dubstep" themed song number 1...
+[##########--------------------] 33% Complete
+Llm-Music-Gen: Converting song number 1 from **format used** to Mp3...
 [##########--------------------] 33% Complete
 
+```
+- Having the option to break-out of the playing mp3 loop and return to main...
+```
+================================================================================
+    Llm-Music-Gen: Output Jukebox
+================================================================================
+
+Playing song: **SongName**
+[##########--------------------] MM:SS/MM:SS
+
+Next 5 Songs: **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**
+
 --------------------------------------------------------------------------------
+Selection; Back to Main = B, Exit Program = X:
 ```
 
 ### Models
