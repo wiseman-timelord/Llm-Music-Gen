@@ -57,7 +57,7 @@ User Input: Chill, Dubstep
 Llm-Music-Gen: How many songs should I generate?
 User Input: 3
 Llm-Music-Gen: Producing "Chill, Dubstep" themed song number 1...
-[##########--------------------] 33% Complete
+[##############################] 100% Complete
 Llm-Music-Gen: Converting song number 1 from **format used** to Mp3...
 [##########--------------------] 33% Complete
 
