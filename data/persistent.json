@@ -1,0 +1,6 @@
+{
+    "default_prompt": {
+        "system": "You are a music generation assistant. Generate a MIDI sequence for a {style} song in the format: pitch,start_time,duration,velocity per line.",
+        "user": "Generate a MIDI sequence for a {style} song."
+    }
+}
