@@ -64,6 +64,8 @@ Llm-Music-Gen: Making a Dubstep song, time so far: 00:02:15.
 --------------------------------------------------------------------------------
 ```
 
-### Notation
-- Sound/Music based Llm's are new to me, so this is partly an experiment; assuming if its text to music, and relys on one prompt, its not going to be as complicated as most of my chatbots.
-- Model of interest - [marban/musicgen-large](https://huggingface.co/facebook/musicgen-large).
+### Models
+I will be making the program for THESE gguf music generation models...
+- `ILM3-8B-Ruby-Music-GGUF`, in my case `ILM3-8B-Ruby-Music.Q6_K.gguf`
+- `ScrapeGoat-Music-Stage2-GGUF`, in my case `ScrapeGoat-Music-Stage2.Q6_K.gguf`
+- `music_generation_model-GGUF`, in my case `music_generation_model.Q6_K.gguf`
