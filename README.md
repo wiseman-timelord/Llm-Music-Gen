@@ -6,27 +6,31 @@ Status: Plan done, on hold (other projects).
 - User Experience: Provide an intuitive text-based interface for seamless interaction.
 - Music Generation: Leverage LLMs and music generation libraries to produce music in various styles.
 - Automation: Implement a loop for continuous music generation with an option to cancel.
-- Compatibility: Ensure the application runs smoothly on Ubuntu 24.10.
+- Compatibility: Ensure the application runs smoothly on Windows 10.
 
 ### File Structure
 ```
-./Llm-Music-Gen.sh: Launcher/installer script.
-./main_script.py: Main application script.
-./data/prompt.txt: Template for prompts sent to the LLM.
+./Llm-Music-Gen.bat: Launcher.
+./launcher.py: Main application script.
+./requisites.py: Installer script, for libraries and json. 
+./data/persistent.json: Template for prompts sent to the LLM.
 ./scripts/models.py: Handles interactions with the LLM.
 ./scripts/utility.py: Backend utilities and helper functions.
 ./scripts/interface.py: Manages text interface, menus, and prompts.
+./scripts/prompts.py: Templates for prompts sent to the LLM.
+./scripts/temporary.py: File with ALL, Global variables, Maps, Lists, those kinds of things (there should be no globals at the tops of any of the scripts, unless we specifically require them to be there).
 ```
 
 ### Technology Stack and Dependencies
 - Programming Language: Python 3.10 or higher.
-- LLMs and Libraries: OpenAI's GPT-4 (if accessible) or open-source alternatives like Hugging Face Transformers.Music generation libraries such as Magenta by TensorFlow or MuseNet.
+- LLMs on Hugging Face in GGUF format.
 - Audio Processing: Pydub for audio manipulation. Simpleaudio or Playsound for audio playback.
 - User Interface: Python's built-in curses library for advanced text-based UI (optional).
-- Shell Scripting: Bash for the launcher/installer script.
+- Windows Command Shell Scripting: Batch for the launcher/installer menu.
 
 ### Description
 Llm-Music-Gen is a command-line Python application designed to generate music based on user-defined styles using Large Language Models (LLMs). The program provides a user-friendly interface with options to configure music styles, generate music, and play the generated tracks automatically.
+Preview
 
 ### Preview
 ```
