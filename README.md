@@ -84,3 +84,10 @@ I will be making the program for THESE llama based gguf music generation models.
 - `ILM3-8B-Ruby-Music-GGUF`, in my case `ILM3-8B-Ruby-Music.Q6_K.gguf`
 - `ScrapeGoat-Music-Stage2-GGUF`, in my case `ScrapeGoat-Music-Stage2.Q6_K.gguf`
 - `music_generation_model-GGUF`, in my case `music_generation_model.Q6_K.gguf`
+
+### Development
+- verifying the token-to-minute mapping.
+- ensuring ffmpeg is installed for MP3 conversion.
+- enhancing multi-model support.
+- improving progress bar granularity. 
+- considering multi-track MIDI support.
