@@ -12,6 +12,18 @@ from scripts.temporary import audio_volume
 console = Console()
 
 def text_to_midi(music_text):
+    """
+    Converts text representation of music notes into a MIDI file.
+
+    Args:
+        music_text (str): Notes in format "pitch,start,duration,velocity" per line.
+
+    Returns:
+        str: Path to the generated MIDI file.
+
+    Raises:
+        ValueError: If the text format or values are invalid.
+    """
     midi = pretty_midi.PrettyMIDI()
     instrument = pretty_midi.Instrument(program=0)  # Piano
     try:
@@ -21,8 +33,13 @@ def text_to_midi(music_text):
                 if len(parts) != 4:
                     raise ValueError(f"Invalid MIDI format: {line}")
                 pitch, start, duration, velocity = map(float, parts)
+                if not (0 <= pitch <= 127 and 0 <= velocity <= 127):
+                    raise ValueError(f"Pitch or velocity out of range: {line}")
+                if start < 0 or duration <= 0:
+                    raise ValueError(f"Invalid start or duration: {line}")
                 note = pretty_midi.Note(
-                    velocity=int(velocity), pitch=int(pitch), start=start, end=start+duration
+                    velocity=int(velocity), pitch=int(pitch),
+                    start=start, end=start + duration
                 )
                 instrument.notes.append(note)
         midi.instruments.append(instrument)
@@ -30,7 +47,7 @@ def text_to_midi(music_text):
         midi.write(midi_file)
         return midi_file
     except Exception as e:
-        console.print(f"[bold red]Error parsing MIDI: {e}[/bold red]")
+        console.print(f"[bold red]MIDI Error: {e}[/bold red]")
         raise
 
 def midi_to_audio(midi_file):

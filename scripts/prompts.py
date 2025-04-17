@@ -1,9 +1,12 @@
 # scripts/prompts.py
-import json
-from rich.console import Console
 
-console = Console()
+prompts = {
+    "default": "Generate music in the style of {style}. Output as comma-separated values: pitch,start,duration,velocity per note.",
+    "jazz": "Generate a jazz piece with improvisational elements. Output as comma-separated values: pitch,start,duration,velocity per note.",
+    "classical": "Generate a classical composition reminiscent of the Romantic era. Output as comma-separated values: pitch,start,duration,velocity per note.",
+    "rock": "Generate a rock song with a strong rhythm section. Output as comma-separated values: pitch,start,duration,velocity per note."
+}
 
-# scripts/prompts.py
 def load_prompt_template(style):
-    return f"Generate music in the style of {style}. Output as comma-separated values: pitch,start,duration,velocity per note."
+    """Load and format the prompt template for the given music style."""
+    return prompts.get(style.lower(), prompts["default"]).format(style=style)

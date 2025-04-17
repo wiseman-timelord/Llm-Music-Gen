@@ -1,62 +1,79 @@
 # requisites.py
 import os
+import shutil
 import subprocess
 import json
 import venv
 from huggingface_hub import hf_hub_download
 
+def clean_install():
+    """Delete existing ./venv and ./data directories for a clean install."""
+    for dir in ["./venv", "./data"]:
+        if os.path.exists(dir):
+            shutil.rmtree(dir)
+
+def create_directories():
+    """Create all necessary directories for the project."""
+    dirs = ["./data", "./models", "./data/raw", "./Output"]
+    for d in dirs:
+        os.makedirs(d, exist_ok=True)
+
+def create_persistent_json():
+    """Create persistent.json with default configuration."""
+    template = {
+        "config": {
+            "thread_fraction": [5, 6],
+            "model_temperature": 0.7,
+            "audio_volume": 1.0,
+            "selected_model": "music_generation_model.Q6_K.gguf"
+        }
+    }
+    with open("./data/persistent.json", "w") as f:
+        json.dump(template, f, indent=4)
+
+def download_model():
+    """Download the default model to ./models/."""
+    model_repo = "nagayama0706/music_generation_model-GGUF"
+    model_file = "music_generation_model.Q6_K.gguf"
+    download_path = "./models/"
+    hf_hub_download(repo_id=model_repo, filename=model_file, local_dir=download_path)
+    print(f"Model downloaded to {download_path}{model_file}")
+
 def create_venv():
+    """Create a virtual environment."""
     venv_dir = "./venv"
-    if not os.path.exists(venv_dir):
-        print("Creating virtual environment...")
-        venv.create(venv_dir, with_pip=True)
+    builder = venv.EnvBuilder(with_pip=True)
+    builder.create(venv_dir)
     return venv_dir
 
+def upgrade_venv_tools(venv_dir):
+    """Upgrade pip and other essential tools in the virtual environment."""
+    pip_executable = os.path.join(venv_dir, "Scripts" if os.name == "nt" else "bin", "pip")
+    subprocess.run([pip_executable, "install", "--upgrade", "pip"], check=True)
+
 def install_dependencies(venv_dir):
-    pip_path = os.path.join(venv_dir, "Scripts", "pip.exe")
-    packages = [
-        "llama-cpp-python",
+    """Install required dependencies into the virtual environment."""
+    pip_executable = os.path.join(venv_dir, "Scripts" if os.name == "nt" else "bin", "pip")
+    dependencies = [
+        "huggingface_hub",
         "rich",
         "pretty_midi",
         "pydub",
         "simpleaudio",
         "numpy",
-        "huggingface_hub"
+        "llama-cpp-python"
     ]
-    requirements_content = "\n".join(packages) + "\n"
-    with open("./data/requirements.txt", "w") as f:
-        f.write(requirements_content)
-    
-    print("Installing dependencies...")
-    for package in packages:
-        subprocess.check_call([pip_path, "install", package])
-
-def download_model():
-    model_repo = "nagayama0706/music_generation_model-GGUF"
-    model_file = "music_generation_model.Q6_K.gguf"
-    download_path = "./data/"
-    os.makedirs(download_path, exist_ok=True)
-    hf_hub_download(repo_id=model_repo, filename=model_file, local_dir=download_path)
-    print(f"Model downloaded to {download_path}{model_file}")
-
-def create_persistent_json():
-    template = {
-        "default_prompt": {
-            "system": "You are a music generation assistant. Generate a MIDI sequence for a {style} song in the format: pitch,start_time,duration,velocity per line.",
-            "user": "Generate a MIDI sequence for a {style} song."
-        }
-    }
-    os.makedirs("./data", exist_ok=True)
-    with open("./data/persistent.json", "w") as f:
-        json.dump(template, f, indent=4)
+    for dep in dependencies:
+        subprocess.run([pip_executable, "install", dep], check=True)
 
 def main():
-    os.makedirs("./data/raw", exist_ok=True)
-    os.makedirs("./Output", exist_ok=True)
-    venv_dir = create_venv()
-    install_dependencies(venv_dir)
-    download_model()
-    create_persistent_json()
+    clean_install()  # Clean existing directories
+    create_directories()  # Create necessary directories
+    venv_dir = create_venv()  # Create the virtual environment
+    upgrade_venv_tools(venv_dir)  # Upgrade pip in the virtual environment
+    install_dependencies(venv_dir)  # Install dependencies into the virtual environment
+    download_model()  # Download the model
+    create_persistent_json()  # Create persistent.json
     print("[bold green]Setup complete. Run Llm-Music-Gen.bat to start.[/bold green]")
 
 if __name__ == "__main__":
