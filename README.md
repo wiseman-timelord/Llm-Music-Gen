@@ -98,22 +98,20 @@ Selection; Back to Main = B, Exit Program = X:
     Llm-Music-Gen: Configuration
 ================================================================================
 
-Thread Fraction: 5/6
-Model Temperature: 0.7 (0.0-1.0)
-Audio Volume: 1.0 (0.0-1.0)
-Selected Model: music_generation_model.Q6_K.gguf
-Song Length: 4-6 minutes
+1. Change Thread Fraction (5/6)
 
---------------------------------------------------------------------------------
+2. Change Model Temperature (0.75)
 
-1. Change Thread Fraction
-2. Change Model Temperature
-3. Change Audio Volume
-4. Select Model
-5. Set Song Length
+3. Change Audio Volume (65%)
+
+4. Select Model (**modelnameShortenedTo20Characters**)
+
+5. Set Song Length (5 Minutes)
+
+6. Auto-Play After Convert (true)
 
 ================================================================================
-Select an option (1-5, M):
+Selection; Options = 1-6, Back to Menu = B:
 ```
 
 ### Models
@@ -124,7 +122,8 @@ I will be making the program for THESE llama based gguf music generation models.
 
 ### Development
 - verifying the token-to-minute mapping.
-- ensuring ffmpeg is installed for MP3 conversion.
-- enhancing multi-model support.
+- ensuring ffmpeg is installed for MP3 conversion. Mp3 
+- enhancing multi-model support. Unsure if this means using models together, or just model support. If just support then we are only supporting llama models such as specifically the three models mentioned though quantization depth should obviously be supported, ie not limited by those specific file names.
 - improving progress bar granularity. 
 - considering multi-track MIDI support.
+- ensure menus are in-line with the previews provided.
