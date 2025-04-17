@@ -115,8 +115,8 @@ Selection; Options = 1-6, Back to Menu = B:
 ```
 
 ### Models
-I will be making the program for THESE specific llama based gguf music generation models...
-- [ILM3-8B-Ruby-Music-GGUF](https://huggingface.co/mradermacher/ILM3-8B-Ruby-Music-GGUF) (ILM3-8B-Ruby-Music.Q6_K.gguf)...
+I will be making the program for THESE specific llama based gguf music generation models, total ~11GB, the specific quantizations of the models shown, will be tested, but other quantizations of the same files must also work...
+- [ILM3-8B-Ruby-Music-GGUF](https://huggingface.co/mradermacher/ILM3-8B-Ruby-Music-GGUF), example model name `ILM3-8B-Ruby-Music.Q3_K_M.gguf` example case size 4.39 GB...
 ```
 ILM3-8B-Ruby-Music-GGUF
 Model Description: This model is based on InternLM3, not LLaMA 3, and is fine-tuned for roleplaying and creative writing. It was trained on a mix of private instruct (1k samples), roleplaying (2.5k human and ~1k synthetic samples), and public datasets, including some related to music (e.g., allura-org/fujin-cleaned-stage-2). It uses ChatML format for input.
@@ -131,7 +131,7 @@ Best used for generating creative text prompts that can be fed into music genera
 Not suitable for direct music generation, as it is focused on text output, but can support the workflow by providing richer prompts.
 Hardware Compatibility: Likely compatible with standard hardware, including Windows 10, as it's in GGUF format and designed for consumer GPUs.
 ```
-- [ChatMusician-GGUF](https://huggingface.co/mradermacher/ChatMusician-GGUF) (ChatMusician.Q6_K.gguf)...
+- [ChatMusician-GGUF](https://huggingface.co/mradermacher/ChatMusician-GGUF) example model name `ChatMusician.Q6_K.gguf`, example case size 5.53 GB...
 ```
 ChatMusician-GGUF
 Model Description: An open-source model based on LLaMA2, specifically designed for music generation through text-based conversations, available in GGUF format with various quantization levels.
