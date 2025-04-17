@@ -56,7 +56,7 @@ Outputted Songs: **NextSongName**, **NextSongName**, **NextSongName**, **NextSon
 ================================================================================
 Selection; Menu Option = 1-3, Refresh Screen = R, Exit Program = X:
 ```
-
+- While Generating and Converting, workflow is printed...
 ```
 ================================================================================
     Llm-Music-Gen: Generate Music
