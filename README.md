@@ -62,16 +62,18 @@ Llm-Music-Gen: Converting song number 1 from **format used** to Mp3...
 [##########--------------------] 33% Complete
 
 ```
-- Having the option to break-out of the playing mp3 loop and return to main...
+- While playing the created Mp3s in Jukebox mode, Having the option to break-out of the playing mp3 loop and return to main or exit...
 ```
 ================================================================================
     Llm-Music-Gen: Output Jukebox
 ================================================================================
 
+Songs Played: **PreviousSongName**, **PreviousSongName**
+
 Playing song: **SongName**
 [##########--------------------] MM:SS/MM:SS
 
-Next 5 Songs: **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**
+Remaining Songs: **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**
 
 --------------------------------------------------------------------------------
 Selection; Back to Main = B, Exit Program = X:
