@@ -121,9 +121,17 @@ I will be making the program for THESE llama based gguf music generation models.
 - `music_generation_model-GGUF`, in my case `music_generation_model.Q6_K.gguf`
 
 ### Development
+- Working on...
+```
 - verifying the token-to-minute mapping.
 - ensuring ffmpeg is installed for MP3 conversion. Mp3 
 - enhancing multi-model support. Unsure if this means using models together, or just model support. If just support then we are only supporting llama models such as specifically the three models mentioned though quantization depth should obviously be supported, ie not limited by those specific file names.
 - improving progress bar granularity. 
 - considering multi-track MIDI support.
 - ensure menus are in-line with the previews provided.
+```
+- Afterwards...
+```
+- The program should continue to make normal lengh songs of minutes but I want such options on the main page not configuration page, and also  I would like to be able to specify on Main page frequencies, so as to be able to make music at a specific frequency, like those meditation songs on youtube. If we can generate some awesome music at sacred frequencies, that would go on for 1, 2, 4, 8, hours, then upload to youtube with some visuals I make in another program, then we have likes and subscribbles.. 
+- time should be able to be specified as, for example, `HH:MM`, `M`, `M-M`.
+```
