@@ -39,12 +39,22 @@ Preview
     Llm-Music-Gen: Main Menu
 ================================================================================
 
-    1. Generate Music
-    2. Output Jukebox
-    2. Configure Options
+Song Length: 4-6 minutes
+Selected Model: music_generation_model.Q6_K.gguf
 
 --------------------------------------------------------------------------------
-Selection; Menu Option = 1-3, Exit Program = X:
+
+Total Songs Length: HH:MM:SS
+Outputted Songs: **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**
+
+--------------------------------------------------------------------------------
+
+    1. Generate Music
+    2. Output Jukebox
+    3. Configure Options
+
+================================================================================
+Selection; Menu Option = 1-3, Refresh Screen = R, Exit Program = X:
 ```
 
 ```
@@ -70,13 +80,40 @@ Llm-Music-Gen: Converting song number 1 from **format used** to Mp3...
 
 Songs Played: **PreviousSongName**, **PreviousSongName**
 
+--------------------------------------------------------------------------------
+
 Playing song: **SongName**
 [##########--------------------] MM:SS/MM:SS
 
+--------------------------------------------------------------------------------
+
 Remaining Songs: **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**, **NextSongName**
 
---------------------------------------------------------------------------------
+================================================================================
 Selection; Back to Main = B, Exit Program = X:
+```
+- Configuration menu...
+```
+================================================================================
+    Llm-Music-Gen: Configuration
+================================================================================
+
+Thread Fraction: 5/6
+Model Temperature: 0.7 (0.0-1.0)
+Audio Volume: 1.0 (0.0-1.0)
+Selected Model: music_generation_model.Q6_K.gguf
+Song Length: 4-6 minutes
+
+--------------------------------------------------------------------------------
+
+1. Change Thread Fraction
+2. Change Model Temperature
+3. Change Audio Volume
+4. Select Model
+5. Set Song Length
+
+================================================================================
+Select an option (1-5, M):
 ```
 
 ### Models
